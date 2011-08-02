@@ -78,21 +78,29 @@ alias gdf='git diff'
 alias g-='git diff'
 alias git+='git add'
 alias g+='git add'
-
+alias git-curbranch='g?|grep "^# On branch "|cut -c 13-'
 function git-newbranch {
-    if (( 0 < ${#1} )) then
-        git branch      $1 && \
-	git checkout    $1 && \
-	git push origin $1
-    else
+    if (( ${#1} <= 1 )) {
         echo "ERROR: must specify new branch name."
 	exit 1
-    fi
+    }
+    git fetch
+    if ( git branch -r | grep origin/$1 ) {
+        echo "ERROR: origin/$1 already exists."
+        exit 2
+    }
+    local old_branch=$(git-curbranch)
+    git branch      $1          && \
+    git checkout    $1          && \
+    git push origin $1          && \
+    git checkout    $old_branch && \
+    git branch -d   $1          && \
+    git checkout -t origin/$1
 }
 alias gnb='git-newbranch'
 alias g+b='git-newbranch'
 
-alias git-authors='git log|grep Author|sort|uniq'
+alias git-authors='git log|grep \^Author:|sort|uniq'
 alias git-all-origin-branches='git show-ref|sort|cut -d " " -f 2|grep refs/remotes/origin|cut -d "/" -f 4'
 
 function git-addremove {
@@ -119,7 +127,7 @@ function git-blame-loc {
 typeset PS1="%(#.%F{red}.%F{cyan})%B%n@%m %#%b%f "
 typeset RPS1="%(#.%F{red}.%F{cyan})%B%~ %(?..%S)[%?]%(?..%s) %t %W%b%f"
 
-if [[ $(hostname) == abaddon ]] { # Camber-specific configuration.
+if [[ $(hostname) == abaddon ]] { # Camber-specific workstation configuration.
     alias slamr2env='. /etc/profile.d/slamr2.sh'
     export DEBFULLNAME='Christopher Mark Gore'
     export DEBEMAIL='chgore@camber.com'
