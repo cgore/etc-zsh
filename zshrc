@@ -63,7 +63,7 @@ alias l='ls -lh'
 alias ccgrep='grep -r --include="*.[ch]"'
 alias rbgrep='grep -r --include="*.rb"'
 alias pygrep='grep -r --include="*.py"'
-alias pwgrep='ps auxww|grep'
+alias pwgrep='ps auxww|head -1; ps auxww|grep'
 
 alias gf='git fetch'
 alias gfetch='git fetch'
