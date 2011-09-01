@@ -45,10 +45,10 @@ autoload run-help
 # If you don't want compinit called here, place the line
 # skip_global_compinit=1
 # in your $ZDOTDIR/.zshenv or $ZDOTDIR/.zprofice
-if [[ -z "$skip_global_compinit" ]]; then
+if [[ -z "$skip_global_compinit" ]] {
   autoload -U compinit
   compinit
-fi
+}
 
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -58,8 +58,11 @@ unsetopt beep
 bindkey -v
 
 alias suxl='sux -l'
-alias ls='ls --color'
+
+alias ls='ls --color --with-filename --line-number --initial-tab'
 alias l='ls -lh'
+
+alias grep='grep --color'
 alias ccgrep='grep -r --include="*.[ch]"'
 alias rbgrep='grep -r --include="*.rb"'
 alias pygrep='grep -r --include="*.py"'
@@ -68,15 +71,9 @@ alias pwgrep='ps auxww|head -1; ps auxww|grep'
 alias gf='git fetch'
 alias gfetch='git fetch'
 alias gitf='git fetch'
-alias git\?='git status'
 alias g\?='git status'
-alias gst='git status'
-alias gitst='git status'
-alias gitstat='git status'
 alias glog='git log'
-alias gdf='git diff'
 alias g-='git diff'
-alias git+='git add'
 alias g+='git add'
 alias git-curbranch='g?|grep "^# On branch "|cut -c 13-'
 function git-newbranch {
@@ -97,7 +94,6 @@ function git-newbranch {
     git branch -d   $1          && \
     git checkout -t origin/$1
 }
-alias gnb='git-newbranch'
 alias g+b='git-newbranch'
 
 alias git-authors='git log|grep \^Author:|sort|uniq'
