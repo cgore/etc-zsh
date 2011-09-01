@@ -59,10 +59,10 @@ bindkey -v
 
 alias suxl='sux -l'
 
-alias ls='ls --color --with-filename --line-number --initial-tab'
+alias ls='ls --color'
 alias l='ls -lh'
 
-alias grep='grep --color'
+alias grep='grep --color --with-filename --line-number --initial-tab'
 alias ccgrep='grep -r --include="*.[ch]"'
 alias rbgrep='grep -r --include="*.rb"'
 alias pygrep='grep -r --include="*.py"'
