@@ -62,10 +62,11 @@ alias suxl='sux -l'
 alias ls='ls --color'
 alias l='ls -lh'
 
-alias grep='grep --color --with-filename --line-number --initial-tab'
-alias ccgrep='grep -r --include="*.[ch]"'
-alias rbgrep='grep -r --include="*.rb"'
-alias pygrep='grep -r --include="*.py"'
+alias grep='grep --color'
+alias fgrep='grep -r --with-filename --line-number --initial-tab'
+alias ccgrep='fgrep --include="*.[ch]"'
+alias rbgrep='fgrep --include="*.rb"'
+alias pygrep='fgrep --include="*.py"'
 alias pwgrep='ps auxww|head -1; ps auxww|grep'
 
 alias gf='git fetch'
@@ -128,3 +129,6 @@ if [[ $(hostname) == abaddon ]] { # Camber-specific workstation configuration.
     export DEBFULLNAME='Christopher Mark Gore'
     export DEBEMAIL='chgore@camber.com'
 }
+
+for extension in .c .cpp .c++ .lisp .py .rb .txt .log .conf
+    alias -s $extension=gvim
