@@ -121,8 +121,8 @@ function git-blame-loc {
     sort -n
 }
 
-typeset PS1="%(#.%F{red}.%F{cyan})%B%n@%m %#%b%f "
-typeset RPS1="%(#.%F{red}.%F{cyan})%B%~ %(?..%S)[%?]%(?..%s) %t %W%b%f"
+typeset PS1="%(#.%F{red}.%F{blue})%B%n@%m %#%b%f "
+typeset RPS1="%(#.%F{red}.%F{blue})%B%~ %(?..%S)[%?]%(?..%s) %t %W%b%f"
 
 if [[ $(hostname) == abaddon ]] { # Camber-specific workstation configuration.
     alias slamr2env='. /etc/profile.d/slamr2.sh'
