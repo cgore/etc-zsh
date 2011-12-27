@@ -75,6 +75,7 @@ alias gitf='git fetch'
 alias g\?='git status'
 alias glog='git log'
 alias g-='git diff'
+alias g-h='git diff HEAD'
 alias g+='git add'
 alias git-curbranch='g?|grep "^# On branch "|cut -c 13-'
 function git-newbranch {
@@ -96,6 +97,8 @@ function git-newbranch {
     git checkout -t origin/$1
 }
 alias g+b='git-newbranch'
+
+alias ta='tig --all'
 
 alias git-authors='git log|grep \^Author:|sort|uniq'
 alias git-all-origin-branches='git show-ref|sort|cut -d " " -f 2|grep refs/remotes/origin|cut -d "/" -f 4'
