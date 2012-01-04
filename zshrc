@@ -70,6 +70,7 @@ alias pygrep='fgrep --include="*.py"'
 alias pwgrep='ps auxww|head -1; ps auxww|grep'
 
 alias gf='git fetch'
+alias gfa='git fetch --all'
 alias gp='git pull'
 alias gP='git push'
 alias gpr='git pull --rebase'
