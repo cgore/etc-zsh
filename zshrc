@@ -69,6 +69,9 @@ alias rbgrep='fgrep --include="*.rb"'
 alias pygrep='fgrep --include="*.py"'
 alias pwgrep='ps auxww|head -1; ps auxww|grep'
 
+alias drc='fakeroot debian/rules clean'
+alias drb='fakeroot debian/rules binary'
+
 alias gf='git fetch'
 alias gfa='git fetch --all'
 alias gp='git pull'
