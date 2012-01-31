@@ -13,7 +13,7 @@
 # Global Order: zshenv, zprofile, zshrc, zlogin
 
 if [[ -z "$PATH" || "$PATH" == "/bin:/usr/bin" ]] {
-	export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
+	export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games:/opt/android-sdk-linux/tools"
 }
 export PATH="${PATH}:${HOME}/bin"
 if [[ $(hostname) == abaddon ]] { # Camber-specific configuration.
