@@ -1,2 +1,4 @@
 *~
 *.sw[nop]
+*.dpkg-dist
+newuser.zshrc.recommended
