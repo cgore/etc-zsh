@@ -64,7 +64,7 @@ alias l='ls -lh'
 
 alias grep='grep --color'
 alias fgrep='grep -r --with-filename --line-number --initial-tab'
-alias ccgrep='fgrep --include="*.[ch]"'
+alias ccgrep='fgrep --include="*.[ch]" --include="*.cpp" --include="*.c++"'
 alias rbgrep='fgrep --include="*.rb"'
 alias pygrep='fgrep --include="*.py"'
 alias pwgrep='ps auxww|head -1; ps auxww|grep'
@@ -84,6 +84,7 @@ alias g-='git diff'
 alias g-h='git diff HEAD'
 alias g+='git add'
 alias git-curbranch='g?|grep "^# On branch "|cut -c 13-'
+alias gM='git merge --no-ff'
 function git-newbranch {
     if (( ${#1} <= 1 )) {
         echo "ERROR: must specify new branch name."
