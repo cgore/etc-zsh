@@ -55,7 +55,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory autocd extendedglob nomatch
 unsetopt beep
-bindkey -v
 
 alias suxl='sux -l'
 
