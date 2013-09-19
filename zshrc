@@ -8,6 +8,8 @@
 
 READNULLCMD=${PAGER:-/usr/bin/pager}
 
+[[ $TERM == eterm-color ]] && export TERM=xterm-color
+
 if [[ "$TERM" != emacs ]] {
     [[ -z "$terminfo[kdch1]" ]] || bindkey -M emacs "$terminfo[kdch1]" delete-char
     [[ -z "$terminfo[khome]" ]] || bindkey -M emacs "$terminfo[khome]" beginning-of-line
