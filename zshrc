@@ -39,7 +39,7 @@ if [[ "$TERM" != emacs ]] {
 }
 
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-			     /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+                              /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
 unalias run-help
 autoload run-help
@@ -89,7 +89,7 @@ alias gM='git merge --no-ff'
 function git-newbranch {
     if (( ${#1} <= 1 )) {
         echo "ERROR: must specify new branch name."
-	exit 1
+        exit 1
     }
     git fetch
     if ( git branch -r | grep origin/$1 ) {
@@ -132,7 +132,8 @@ function git-blame-loc {
     sort -n
 }
 
-typeset PS1="%(#.%F{magenta}.%F{cyan})%B%n@%m %#%b%f "
+typeset PS1="%(#.%F{magenta}.%F{cyan})%B%n@%m %~ %#%b%f "
+# typeset PS1="%(#.%F{magenta}.%F{cyan})%B%n@%m %#%b%f "
 # typeset RPS1="%(#.%F{magenta}.%F{cyan})%B%~ %(?..%S)[%?]%(?..%s) %t %W%b%f"
 
 if [[ $(hostname) == abaddon ]] { # Camber-specific workstation configuration.
