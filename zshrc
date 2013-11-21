@@ -142,5 +142,11 @@ if [[ $(hostname) == abaddon ]] { # Camber-specific workstation configuration.
     export DEBEMAIL='chgore@camber.com'
 }
 
+if [[ $(hostname) == naaman.cgore.com ]] {
+   if [[ TERM == eterm-color ]] {
+      TERM=xterm-color
+   }
+}
+
 for extension in .c .cpp .c++ .lisp .py .rb .txt .log .conf
     alias -s $extension=gvim
