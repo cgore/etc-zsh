@@ -60,7 +60,12 @@ unsetopt beep
 
 alias suxl='sux -l'
 
-alias ls='ls --color'
+if [ `uname` = "Darwin" ]
+then
+    alias ls='ls -G'
+else
+    alias ls='ls --color'
+fi
 alias l='ls -lh'
 
 alias grep='grep --color'
