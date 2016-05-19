@@ -68,6 +68,7 @@ then
 else
     alias ls='ls --color'
 fi
+
 alias l='ls -lh'
 
 alias grep='grep --color'
