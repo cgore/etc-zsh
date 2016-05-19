@@ -63,6 +63,7 @@ alias suxl='sux -l'
 if [ `uname` = "Darwin" ]
 then
     alias ls='ls -G'
+    alias sed=gsed
 else
     alias ls='ls --color'
 fi
