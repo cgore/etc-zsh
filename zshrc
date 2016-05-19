@@ -62,6 +62,7 @@ alias suxl='sux -l'
 
 if [ `uname` = "Darwin" ]
 then
+    export PATH=usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin:/Users/cgore/bin:$PATH
     alias ls='ls -G'
     alias sed=gsed
 else
@@ -156,8 +157,3 @@ if [[ $(hostname) == naaman.cgore.com ]] {
 
 for extension in .c .cpp .c++ .lisp .py .rb .txt .log .conf
     alias -s $extension=gvim
-
-if [ `uname` = "Darwin" ]
-then
-    export PATH=usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin:/Users/cgore/bin:$PATH
-fi
